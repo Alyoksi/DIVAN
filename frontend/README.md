@@ -17,7 +17,7 @@ node -v # должно быть `v20.17.0`
 npm -v # should print `10.8.2`
 
 # Скачиваем SCSS
-npm install sass
+npm install sass styled-components
 
 # Скачиваем React и вспомогательные пакеты
 npm install -g create-react-app@5.0.1
