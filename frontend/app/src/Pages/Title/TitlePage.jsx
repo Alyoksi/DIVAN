@@ -1,12 +1,12 @@
 import React from 'react';
 import './TitlePage.scss'; // Импортируйте файл стилей
 import Logo from '../../components/Logo'
-import Header from '../../components/Header/Header';
+import TitleHeader from '../../components/Headers/TitleHeader/TitleHeader';
 
 const TitlePage = () => {
     return (
       <div className='title'>
-        <Header />
+        <TitleHeader />
         <div className="container">
             <div className="rectangle">
                 <Logo fontsz='140px' />

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Logo from '../Logo';
+import Logo from '../../Logo';
+import { Link } from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -8,6 +9,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+
 `;
 
 const ButtonContainer = styled.div`
@@ -34,10 +36,17 @@ const WhiteStrip = styled.div`
 `;
 
 const LoginButton = ({ text }) => (
-  <Button>{text}</Button>
+  <Button>
+    <Link 
+      to={text.toLowerCase() === 'войти' ? '/login' : '/register'}
+      style={{ textDecoration: 'none', color: 'inherit' }}
+    >
+      {text}
+    </Link>
+  </Button>
 );
 
-const Header = () => (
+const TitleHeader = () => (
   <Container>
     <Logo />
     <WhiteStrip />
@@ -48,4 +57,4 @@ const Header = () => (
   </Container>
 );
 
-export default Header;
+export default TitleHeader;
