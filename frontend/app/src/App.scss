@@ -3,18 +3,3 @@
   flex-direction: column;
   min-height: 100vh;
 }
-
-.App-main {
-  background-color: #cecece;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  letter-spacing: 0.05em;
-
-  >h1 {
-    font-size: 130px;
-    // font-style: italic;
-  }
-}
