@@ -1,14 +1,17 @@
-import React from 'react';
-import './App.scss';
-import Header from './components/Header/Header';
-import TitlePage from './components/Titlepage/Titlepage'
+import { BrowserRouter as Router, BrowserRouter, Route, Routes } from 'react-router-dom';
+import TitlePage from './Pages/Title/TitlePage';
+import LoginPage from './Pages/Login/LoginPage';
+import RegisterPage from './Pages/Register/RegisterPage';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <TitlePage />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<TitlePage/>} />
+        <Route path='/login' element={<LoginPage/>} />
+        <Route path='/register' element={<TitlePage/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
