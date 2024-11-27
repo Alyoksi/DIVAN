@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import Logo from '../../Logo';
+import { Link } from 'react-router-dom';
+
 
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #dfdfdf;
+
 `;
 
 const ButtonContainer = styled.div`
@@ -14,30 +17,38 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: #007bff;
-  color: white;
-  border-radius: 8px;
+  background-color: #d9d9d9;
+  color: #292929;
+  border-radius: 5px;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 10px;
+
   margin-right: 10px;
   cursor: pointer;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #bfbdbd;
   }
 `;
 
 const WhiteStrip = styled.div`
-  background-color: white;
-  height: 50px;
+  height: 3vh;
 `;
 
 const LoginButton = ({ text }) => (
-  <Button>{text}</Button>
+  <Button>
+    <Link 
+      to={text.toLowerCase() === 'войти' ? '/login' : '/register'}
+      style={{ textDecoration: 'none', color: 'inherit' }}
+    >
+      {text}
+    </Link>
+  </Button>
 );
 
-const Header = () => (
+const TitleHeader = () => (
   <Container>
+    <Logo />
     <WhiteStrip />
     <ButtonContainer>
       <LoginButton text="Войти" />
@@ -46,4 +57,4 @@ const Header = () => (
   </Container>
 );
 
-export default Header;
+export default TitleHeader;
