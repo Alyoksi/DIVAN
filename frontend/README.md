@@ -16,11 +16,11 @@ node -v # должно быть `v20.17.0`
 # Проверяем, есть ли npm 
 npm -v # should print `10.8.2`
 
-# Скачиваем SCSS
-npm install sass styled-components
+# Заходим в frontend
+npm install
 
-# Скачиваем React и вспомогательные пакеты
-npm install -g create-react-app@5.0.1
+# Заходим в frontend/app
+npm install
 ```
 
 #### 2. Запуск React-приложения
