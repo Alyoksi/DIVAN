@@ -1,0 +1,38 @@
+.title{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 80vh; /* Занимает всю высоту экрана */
+}
+
+.rectangle {
+  height: 30%;
+  width: 50%;
+
+  background-color: #d3d3d3; /* Серый цвет */
+  padding: 20px; /* Отступы внутренние */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Легкая тень для эффекта */
+  border-radius: 10px;
+  >p{
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+}
+
+.form_name {
+  font-size: 45px; /* Размер шрифта для подзаголовка */
+  margin-bottom: 15px; /* Убираем отступы */
+  font-weight: 100; /* Делаем шрифт тонким и нежирным */
+}
+
+input{
+  border-radius: 5px;
+  border: none;
+  height: 60px;
+  width: 95%;
+}
