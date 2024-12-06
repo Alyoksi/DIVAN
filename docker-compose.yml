@@ -1,0 +1,45 @@
+services:
+  # контейнер с постгресом
+  db:
+    # развернуть постгрес из официального образа
+    image: postgres
+    # bind mount, папка будет доступна из-под контейнера
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    # переменные окружения, которые будут добавлены в контейнер
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  # контейнер с django
+  back:
+    # создать образ из докерфайла
+    build: ./backend
+    # bind mount, папка будет доступна из-под контейнера
+    volumes:
+      - ./backend:/app
+    # порту хоста соответствует некоторый порт в контейнере
+    ports:
+      - 8000:8000
+    # переменные окружения, которые будут добавлены в контейнер
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    # создать контейнер только после того, как поднимется база данных
+    depends_on:
+      - db
+
+  # контейнер с react
+  front:
+    build: ./frontend/app
+    volumes:
+      - ./frontend/app/src:/app/src
+      - ./frontend/app/public:/app/public
+    ports:
+      - 3000:3000
+    depends_on:
+      - back
