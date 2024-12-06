@@ -6,6 +6,8 @@ services:
     # bind mount, папка будет доступна из-под контейнера
     volumes:
       - ./data/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
     # переменные окружения, которые будут добавлены в контейнер
     environment:
       - POSTGRES_DB=postgres
